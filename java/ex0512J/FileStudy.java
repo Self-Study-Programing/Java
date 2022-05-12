@@ -86,6 +86,20 @@ public class FileStudy {
         original.renameTo(target);
     }
 
+    public void studyList(){
+        File dir = new File("/Users/seonghun/공부/filestudy");
+        String[] list = dir.list();
+
+        for(String name : list){
+            System.out.println(name);
+        }
+
+        File[] listFiles = dir.listFiles();
+        for(File file : listFiles){
+            System.out.println(file);
+        }
+    }
+
     public Date convertToDate(long unixTime){
         return new Date(unixTime);
     }
@@ -98,6 +112,7 @@ public class FileStudy {
     public static void main(String[] args) throws Exception{
         FileStudy fileStudy = new FileStudy();
 //        fileStudy.studyFileData();
-        fileStudy.studyManage();
+//        fileStudy.studyManage();
+        fileStudy.studyList();
     }
 }
